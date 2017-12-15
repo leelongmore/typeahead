@@ -1,0 +1,11 @@
+<% content_for :footer do %>
+  <script>
+    $(document).ready(function() { $("#search").select2(); });
+  </script>
+<% end %>
+
+<h1>Search for a contact</h1>
+
+<p>Start typing a contact's name and select to view.</p>
+<label for="search">search</label>
+<select id="search" name="search"></select>
