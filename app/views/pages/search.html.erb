@@ -1,6 +1,22 @@
 <% content_for :footer do %>
   <script>
-    $(document).ready(function() { $("#search").select2(); });
+    $(document).ready(function() {
+      $("#search").select2({
+        minimumInputLength: 3,
+        ajax: {
+          url: '/contacts/index',
+          processResults: function (data) {
+            return {
+              results: data.contacts
+            }
+          }
+        },
+        templateResult: function (contact) {
+          var markup = "<div>" + contact.name + "</div>";
+          return $.parseHTML(markup)
+        }
+      })
+    });
   </script>
 <% end %>
 
