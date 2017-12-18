@@ -16,6 +16,11 @@
           return $.parseHTML(markup)
         }
       })
+
+      $("#search").on('select2:select', function (e) {
+        var data = e.params.data;
+        window.location.href = "/contacts/" + data.id
+      })
     });
   </script>
 <% end %>

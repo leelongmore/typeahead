@@ -5,8 +5,8 @@ include Select2Helper
 
 RSpec.feature "Contacts", type: :feature, js: :true do
   scenario "user searches for a contact" do
-    pending "ajax (remote data) not yet implemented"
-    joe = FactoryBot.create(:contact, name: 'Joe Bloggs')
+    joe = FactoryBot.create(
+      :contact, name: 'Joe Bloggs', email: 'joe@example.com')
     FactoryBot.create(:contact, name: 'Ben Blower')
     FactoryBot.create(:contact, name: 'Fred Smith')
 
